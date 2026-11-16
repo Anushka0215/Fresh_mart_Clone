@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    nav {
+        border-bottom: 1px solid lightgrey;
+        height: 70px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 50px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        background-color: white;
+        row-gap:10px
+
+    }
+
+    .logo {
+        color: green;
+        font-size: 22px;
+        font-weight: 700;
+        
+    }
+
+    .input {
+        width: 35%;
+        /* position: relative; */
+    }
+
+    .input input {
+        width: 100%;
+        padding: 13px 30px;
+        border-radius: 10px;
+        border: 1px solid lightgrey;
+
+    }
+
+    .icon {
+        position: absolute;
+        top: 25%;
+        left: 10px;
+        font-size: 15px;
+    }
+
+    .nav-items {
+        width: 20%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav-items li {
+        list-style: none;
+
+
+    }
+
+    .nav-items li:hover {
+        cursor: pointer;
+    }
+
+    .hero {
+        border: 2px solid lightgrey;
+        height: 45vh;
+        border-radius: 20px;
+        margin: 0 50px;
+        background: linear-gradient(to right, #d8f3dc, #b7e4c7);
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        padding: 70px 50px;
+    }
+
+    .hero-wrapper {
+        padding: 70px 0 30px 0;
+        background-color: #f1f3f4;
+    }
+
+    .hero-text h1 {
+        font-size: 45px;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+    }
+
+    .hero-text p {
+        color: rgb(86, 85, 85);
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+
+    .hero-text button {
+        
+        padding: 13px 25px;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        font-weight: 500;
+        background-color: green;
+        transition :2s ease-in-out 2s;
+
+    }
+
+    .hero-image {
+        font-size: 128px;
+        animation : float
+        
+
+    }
+
+    .dummy {
+        height: 100vh;
+        border: 1px solid red;
+    }
+
+    .category {
+        padding: 20px 50px;
+        border-bottom: 1px solid #e0e0e0;
+        position: sticky;
+        background-color: white;
+        /* left:0;
+        right:0; */
+        top: 0;
+        z-index:100;
+    }
+
+    .category h1 {
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+
+    .cat-items {
+        width: 35%;
+        display: flex;
+        justify-content: space-between;
+        position: sticky;
+    }
+
+    .box {
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+        background-color: #d8f3dc;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+
+    }
+
+    .cat-item-wrapper {
+        /* border: 1px solid black; */
+    }
+
+    .cat-item-wrapper p {
+        text-align: center;
+    }
+
+
+
+    .products {
+    
+    padding: 40px 60px;
+    background-color: white;
+    position: sticky;
+}
+.products h2 {
+    margin-bottom: 25px;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    position: relative;
+    background-color: white;
+    border: 1px solid lightgrey;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.product-image {
+    height: 120px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.product-card p {
+    color: green;
+    font-weight: bold;
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    background-color: red;
+    color: white;
+
+    padding: 5px 10px;
+    border-radius: 5px;
+
+    font-size: 12px;
+}
+button:hover{
+    background-color : Orange;
+}
+.hero-image:hover{
+
+    transform:scale(1.5);
+}
+@media (max-width: 600px) {
+    nav {
+        border: 5px solid green;    
+        display: grid;
+        grid-template-areas: "logo nav-items" "searchInput searchInput";
+        height: auto;
+        padding: 10px 20px;
+        gap: 10px;
+}
+    .logo{
+        grid-area: logo;
+    }
+    .nav-items{
+        grid-area: nav-items;
+        gap:10px;
+
+    }
+
+    .input{
+        grid-area: searchInput;
+        width: 100%;
+    }
+    .hero{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        font-size:10px;
+        margin:10px;
+        padding:50px 20px;
+
+    }
+    .hero image{
+        text-align: center;
+        font-size: 10px;
+    }
+    .category{
+        padding: 20px;
+    }
+    .cart-container{
+        font-size:100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+    }
+    .cat-items{
+        width:100%;
+        gap:20px;
+        overflow: scroll;
+    }
+    .product-list{
+        grid-template-columns: 1fr;
+    }
+        
+    
+
+    }
+    </style>
+
+    
+<body>
+    <nav>
+        <div class="logo">FreshMart</div>
+        <div class="input"><input placeholder="Search fruits,vegetables..."></div>
+        <div class="nav-items">
+            <li>Home</li>
+            <li>Products</li>
+            <li>Cart</li>
+            </div>
+    </nav>
+    <main>
+        <div class="hero-wrapper">
+            <div class="hero">
+
+                <div class="hero-text">
+                    <h1>Fresh groceries <br>
+                        delivered to you.</h1>
+                    <p>Fruits, vegetables and daily essentials delivered fresh.</p>
+                    <button>Shop Now</button>
+                </div>
+
+                <div class="hero-image">
+                    🛒
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h1>Shop by Category</h1>
+
+            <div class="cat-items">
+
+                <div class="cat-item-wrapper">
+                    <div class="box">🍎</div>
+                    <p>Fruits</p>
+                </div>
+
+                <div class="cat-item-wrapper">
+                    <div class="box">🥦</div>
+                    <p>Vegetables</p>
+                </div>
+
+                <div class="cat-item-wrapper">
+                    <div class="box">🥛</div>
+                    <p>Dairy</p>
+                </div>
+                <div class="cat-item-wrapper">
+                    <div class="box">🍞</div>
+                    <p>Bakery</p>
+                </div>
+                <div class="cat-item-wrapper">
+                    <div class="box">🧃</div>
+                      <p>Drinks</p>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="products">
+        <h2>Popular Products</h2>
+        <div class="product-list">
+        
+            
+          <div class="product-card">
+             <span class="badge">NEW</span>
+             <div class="product-image">🍎</div>
+             <h3>Fresh Apples</h3>
+             <p>₹120 / kg</p>
+          </div>
+
+        
+          <div class="product-card">
+             <span class="badge">20% OFF</span>
+             <div class="product-image">🥦</div>
+             <h3>Fresh Broccoli</h3>
+             <p>₹80 / kg</p>
+          </div>
+
+        
+          <div class="product-card">
+             <div class="product-image">🥛</div>
+             <h3>Fresh Milk</h3>
+             <p>₹60 / litre</p>
+          </div>
+
+        
+          <div class="product-card">
+             <span class="badge">SALE</span>
+             <div class="product-image">🍞</div>
+             <h3>Brown Bread</h3>
+             <p>₹45</p>
+          </div>
+
+        
+          <div class="product-card">
+             <div class="product-image">🍊</div>
+             <h3>Fresh Oranges</h3>
+             <p>₹90 / kg</p>
+          </div>
+
+        
+          <div class="product-card">
+             <span class="badge">NEW</span>
+             <div class="product-image">🍌</div>
+             <h3>Bananas</h3>
+             <p>₹50 / dozen</p>
+          </div>
+
+        
+          <div class="product-card">
+             <div class="product-image">🍅</div>
+             <h3>Tomatoes</h3>
+             <p>₹40 / kg</p>
+          </div>
+
+        
+          <div class="product-card">
+             <span class="badge">10% OFF</span>
+             <div class="product-image">🧃</div>
+             <h3>Orange Juice</h3>
+             <p>₹110</p>
+          </div>
+        </div>
+        </div>
+        </main>
+</body>
+</html>
